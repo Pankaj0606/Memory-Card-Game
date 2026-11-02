@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlipMatch — Memory Card Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <header class="game-header">
+      <h1 class="game-title">🧠 FlipMatch</h1>
+      <p class="game-subtitle">Find all matching pairs to win!</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <span class="stat-label">Moves</span>
+        <span class="stat-value" id="moves-count">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pairs Found</span>
+        <span class="stat-value" id="pairs-count">0 / 8</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="timer">00:00</span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+      <button class="btn btn-restart" id="restart-btn">🔄 Restart Game</button>
+      <label class="toggle-container" title="If enabled, a single mistake will reset all matched pairs!">
+        <input type="checkbox" id="hardcore-toggle">
+        <span class="toggle-slider"></span>
+        <span class="toggle-text">Hardcore Mode</span>
+      </label>
+    </div>
+
+    <!-- 4x4 Cards Grid (16 Cards = 8 Pairs) -->
+    <div class="card-grid" id="card-grid"></div>
+  </div>
+
+  <!-- Win Modal Dialog -->
+  <div class="modal-overlay" id="win-modal">
+    <div class="modal-content">
+      <h2>🎉 Outstanding Memory!</h2>
+      <p id="win-summary">You matched all cards!</p>
+      <button class="btn btn-modal" id="modal-restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
